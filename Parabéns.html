@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz para Lully</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            opacity: 1; /* Removido fade-in da primeira imagem */
+            transition: opacity 2s ease;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <!-- Introdução -->
+        <div id="intro">
+            <h1>Oi Lully</h1>
+            <p>Eu queria deixar aqui um pouco de nós, não sei se vai ficar bom, mas espero que aproveite, leia tudo com calma e faça devagar, aproveite cada lembrança! E por favor, escute as muicaaaas. E o mais importante, feliz aniversário!</p>
+            <button onclick="startQuiz()">*INICIAR QUIZ*</button>
+        </div>
+
+        <!-- Perguntas -->
+        <!-- Primeira pergunta -->
+        <div id="question-1" class="hidden">
+            <p>De cara não podia deixar de relembrar o primeiro beijo, ali era que nós dariamos o primeiro encontro de nossa história de paixão, digo de AMOR! Eu todo envergonhado nem sabia o que tava fazendo... kkk</p>
+            <img id="img-1" src="img/foto1.jpg" alt="Primeira memória" />
+            <p>Qual cena tu acha que não sai da minha cabeça desse dia na praia?</p>
+            <button onclick="checkAnswer(1, 'A')">A- O nosso beijo</button>
+            <button onclick="checkAnswer(1, 'B')">B- Tu brava no outro dia</button>
+            <button onclick="checkAnswer(1, 'C')">C- Eu te olhando antes do beijo morto de vergonha</button>
+            <button onclick="checkAnswer(1, 'D')">D- Tu deitada e eu te segurando na água</button>
+        </div>
+
+        <!-- Segunda pergunta -->
+        <div id="question-2" class="hidden">
+            <p>Agora a gente já pula para o que seria nosso segundo beijo, embora sempre ser contado como o primeiro já que dei fechame no primeiro kkk. Que eu já te queria isso era óbvio, eu só dizia que era muita areia pra dar uma irritadinha, mas porque tu acha que “demorei” a ficar e esperei mais por tu do que ataquei?</p>
+            <img id="img-2" src="img/foto2.jpg" alt="Segunda memória" />
+            <p>Qual a resposta?</p>
+            <button onclick="checkAnswer(2, 'A')">A- Eu realmente sou mole</button>
+            <button onclick="checkAnswer(2, 'B')">B- Eu queria ter certeza que tu queria</button>
+            <button onclick="checkAnswer(2, 'C')">C- Tinha medo do que tu ia pensar, aliás eu era muito amigo teu</button>
+            <button onclick="checkAnswer(2, 'D')">D- Eu iria me apaixonar rapidão se dou mole demais</button>
+        </div>
+
+        <!-- Terceira pergunta -->
+        <div id="question-3" class="hidden">
+            <p>Enfim estamos nos vendo quase todos os dias, passamos algum tempo sem se falar após nosso segundo beijo e até nos vimos e não ficamos (eu novamente mole kk), mas começamos a ficar quase todos os dias e antes do nosso namoro qual cena mais marcante?</p>
+            <img id="img-3" src="img/foto3.jpg" alt="Terceira memória" />
+            <p>Qual a cena mais marcante?</p>
+            <button onclick="checkAnswer(3, 'A')">A- Nós deitados no sofá</button>
+            <button onclick="checkAnswer(3, 'B')">B- Nós tomando banho juntos</button>
+            <button onclick="checkAnswer(3, 'C')">C- Nós assistindo filme</button>
+            <button onclick="checkAnswer(3, 'D')">D- Nós brigando pela primeira vez</button>
+        </div>
+
+        <!-- Quarta pergunta -->
+        <div id="question-4" class="hidden">
+            <p>Agora já estamos quase namorando e meu maior medo ainda era Miguel, eu não sabia agir com ele, eu tinha medo de tudo que eu fizesse, tinha medo de me achar chato ou forçado, mas eu sempre quis ser amigo dele kkk, a primeira vez que brinquei com ele eu nunca vou esquecer também, então qual foi a primeira brincadeira?</p>
+            <img id="img-4" src="img/foto4.jpg" alt="Quarta memória" />
+            <p>Qual foi a primeira brincadeira?</p>
+            <button onclick="checkAnswer(4, 'A')">A- Eu fiquei brincando com meu celular com ele</button>
+            <button onclick="checkAnswer(4, 'B')">B- Eu fiquei jogando ele pra cima</button>
+            <button onclick="checkAnswer(4, 'C')">C- Eu fiquei dando cheiro nele</button>
+            <button onclick="checkAnswer(4, 'D')">D- Eu coloquei um video no youtube do jogo kkk</button>
+        </div>
+
+        <!-- Quinta pergunta -->
+        <div id="question-5" class="hidden">
+            <p>Agora a gente deu certo, estamos juntos e já teve muita confusão, porém após meu pior erro, a melhor coisa aconteceu: tu foi dormir lá em casa pela primeira vez! Foi algo muito engraçado, mas que dali em diante mudaria minha vida, minha forma de pensar e de viver completamente. Após aquele dia, eu queria aquilo mais e mais...</p>
+            <p>Quando se fala naquela noite, tu já lá em casa, o que tu acha que eu pensava?</p>
+            <img id="img-5" src="img/foto5.jpg" alt="Quinta memória" />
+            <button onclick="checkAnswer(5, 'A')">A- Mãe vai me comer vivo amanhã</button>
+            <button onclick="checkAnswer(5, 'B')">B- Que perfeita dormindo comigo</button>
+            <button onclick="checkAnswer(5, 'C')">C- E se fosse sempre assim?</button>
+            <button onclick="checkAnswer(5, 'D')">D- VAMO FUDER PRA CARALHO</button>
+        </div>
+
+        <!-- Mensagem final -->
+        <div id="final-message" class="hidden">
+            <img id="img-final" src="img/foto6.jpg" alt="Mensagem final" />
+            <p>Bem, isso aqui era pra ser mais bonitinho e bem feito, mas eu não sei se vou estar desbloqueado e já tem dias que to tentando fazer isso, e se eu tiver bloqueado e não tiver como te mandar aí fudeu, vou parando por aqui kkk. Mas feliz aniversário, espero que tenha escutado todas as músicas de coração, cada música foi tirada de alguma lembrança, eu espero que sua vida fique em paz, não fiz isso pensando em nos falar, se for melhor assim que seja, talvez não estejamos prontos para viver nosso amor agora, mas como eu disse, eu vou te esperar até depois da morte. Então, quando achar que está pronta para ficar comigo de verdade, pode falar comigo. Sinceramente, não acho que devemos ter contato se não for para estar juntos de verdade, mas que sua vida seja cheia de bênçãos e gratidão! Espero que passe por essa fase turbulenta e saiba que, se você tiver passando por algum karma que seja em relação a mim, eu te perdoo por tudo. Eu te amo pra sempre. Feliz aniversário adiantado e lembre-se que vou estar pronto quando você estiver. Obrigado <3</p>
+        </div>
+
+        <!-- Mensagem de resposta -->
+        <div id="message" class="hidden">
+            <p id="response-message"></p>
+            <button onclick="nextQuestion()">Próxima</button>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        let currentMusic = null;
+        const musics = [
+            'music/musica1.mp3', // Música da introdução
+            'music/musica2.m4a', // Música da primeira pergunta
+            'music/musica3.mp3', // Música da segunda pergunta
+            'music/musica4.m4a', // Música da terceira pergunta
+            'music/musica5.mp3', // Música da quarta pergunta
+            'music/musica6.m4a'  // Música da quinta pergunta
+        ];
+
+        function startQuiz() {
+            document.getElementById('intro').classList.add('hidden');
+            document.getElementById('question-1').classList.remove('hidden');
+            playMusic(0); // Tocar música inicial
+        }
+
+        // Verificar a resposta
+        function checkAnswer(questionNumber, answer) {
+            let correctAnswer = '';
+            let message = '';
+
+            if (questionNumber === 1) {
+                correctAnswer = 'C';
+                message = (answer === correctAnswer) ? 'Isso mesmo, eu tava morrendo de vergonha, querendo ou não sou muito mole' : 'Hmm, não foi isso.';
+            } else if (questionNumber === 2) {
+                correctAnswer = 'B';
+                message = (answer === correctAnswer) ? 'Sim, eu queria ter certeza que tu também queria!' : 'Não foi bem isso...';
+            } else if (questionNumber === 3) {
+                correctAnswer = 'A';
+                message = (answer === correctAnswer) ? 'Isso, eu nunca vou esquecer daquela cena deitada naquele sofá, eu deitado por cima de tu e olhando no teu olho...' : 'Hmm, não foi isso.';
+            } else if (questionNumber === 4) {
+                correctAnswer = 'B';
+                message = (answer === correctAnswer) ? 'Sim, eu fiquei brincando jogando ele pra cima, ele nem gostou muito, mas depois disso ele foi se soltando mais comigo, até parou de me expulsar e me chamar pra brincar as vezes kkk' : 'Não foi bem assim...';
+            } else if (questionNumber === 5) {
+                correctAnswer = 'C';
+                message = (answer === correctAnswer) ? 'Acertou! Eu só pensava: e se fosse sempre assim? Acho que era tudo que eu queria...' : 'Errou.';
+            }
+
+            document.getElementById('response-message').innerText = message;
+            document.getElementById('message').classList.remove('hidden');
+        }
+
+        // Ir para a próxima pergunta
+        function nextQuestion() {
+            if (currentQuestion < 5) { // Verifica se ainda tem perguntas
+                document.getElementById(`question-${currentQuestion}`).classList.add('hidden');
+                currentQuestion++;
+                document.getElementById(`question-${currentQuestion}`).classList.remove('hidden');
+
+                // Parar a música anterior e tocar a nova
+                stopMusic();
+                playMusic(currentQuestion - 1);
+
+                // Fade-in da nova imagem
+                const currentImage = document.getElementById(`img-${currentQuestion}`);
+                fadeIn(currentImage);
+            } else {
+                // Mostrar mensagem final
+                document.getElementById(`question-${currentQuestion}`).classList.add('hidden');
+                document.getElementById('final-message').classList.remove('hidden');
+                stopMusic();
+                playMusic(5); // Tocar música da mensagem final
+
+                // Fade-in da imagem final
+                const finalImage = document.getElementById('img-final');
+                fadeIn(finalImage);
+            }
+        }
+
+        // Função para tocar música
+        function playMusic(index) {
+            if (currentMusic) {
+                currentMusic.pause();
+            }
+            currentMusic = new Audio(musics[index]);
+            currentMusic.play();
+        }
+
+        // Função para parar a música
+        function stopMusic() {
+            if (currentMusic) {
+                currentMusic.pause();
+                currentMusic.currentTime = 0; // Reinicia a música
+            }
+        }
+
+        // Efeito de fade-in nas imagens (exceto na primeira)
+        function fadeIn(element) {
+            let opacity = 0;
+            element.style.opacity = opacity;
+
+            const fadeEffect = setInterval(function() {
+                if (opacity < 1) {
+                    opacity += 0.05;
+                    element.style.opacity = opacity;
+                } else {
+                    clearInterval(fadeEffect);
+                }
+            }, 100); // Duração do fade-in
+        }
+    </script>
+
+</body>
+</html>
